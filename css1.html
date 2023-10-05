@@ -8,10 +8,9 @@
     <style>
         /* div는 태그 선택자를 의미 */
         * {
-            color: orange;
+            color: blue;
         }
         p {
-            color: red;
             font-style: italic;
         }
         /* 클래스 선택자 :  */
@@ -19,15 +18,62 @@
             border: 1px solid #333;
             padding: 5px;
         }
+        /* 그룹 선택자 : 여러 선택자를 하나로 묶음(,)콤마로 구분 함 */
+        p, .accent {
+            color: darkblue;
+        }
+
         .bg {
             background-color: #ddd;
         }
         /* 아이디 선택자 : 태그에 id 키워드, #클래스명 { } */
         #container {
-            width: calc(100vw - 200px); /*반응 웹 : 전체 100에서 20만 잘라내 나머지부분만 보여지게 함 */
+            width: calc(100vw - 60px); /*반응 웹 : 전체 100에서 20만 잘라내 나머지부분만 보여지게 함 */
+            height: calc(100vw - 60px);
             margin: 10px auto;
             padding: 10px;
             border: 1px solid #000;
+            background-color: rosybrown;
+        }
+        /* 기본 속성 선택자 : */
+        a[href] {
+            text-decoration: none;
+            font-size: 1.6em
+        }
+        a[target="_blank"] {
+        }
+        /* 자식 선택자 : 자식만 선택하려면 비교연산자 넣어주어야 함 */
+        .box > p {
+            font-size: 1.2em;
+            color: red;
+            font-weight: 900;
+        }
+        /* 인접 형제 선택자 : + 기호를 사용해서 지정된 요소의 바로 다음 형제 요소를 선택(h1 다음에 오는 h2만)*/
+        h1 + h2 {
+            color: chartreuse;
+        }
+        /* 일반 형제 선택자 : 특정 요소 이후에 나오는 모든 현재 요소 선택(h2만)*/
+        h1 ~ h2 {
+            color: brown;
+        }
+        /* 가상 요소 선택자 : 요소의 특정 부분에 스타일 적용하는 방법 */
+        /* (:)콜론으로 시작하여 요소의 내용이 아닌 요소의 특정 부분에 스타일을 적용 */
+        h1::before {
+            content: "★";
+            color: red;
+        }
+        h1::after {
+            content: "★";
+            color: blue;
+        }
+        /* 가상 클래스 선택자 : 요소의 상태를 이용해 선택자를 지정하는 방법 */
+        /* link : 한번도 방문하지 않은 링크일 때 선택 */
+        /* visited : 한번이라도 방문한 적이 있는 링크 */
+        a:link {
+            color: orange;
+        }
+        a:visited {
+            color:green;
         }
     </style>
 </head>
@@ -38,5 +84,23 @@
         <p>레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
         <p>비타민 C와 비타민 P가 풍부해 혈액순환, 감기예방 등에 좋은 것으로 알려져 있다.</p>
     </div>
+    <a href="http://www.client.co.kr">클리앙</a><br>
+    <a href="https://www.netflix.com/kr/" target="_blank">넷플릭스</a>
+
+    <div class="box">
+        <p>아이폰 15 Pro Max</p>
+        <div>
+            <p>아이폰 15mini</p>
+        </div>
+        <p>아이패드</p>
+    </div>
+
+    <div>
+        <h1>제목 1번 입니다.</h1>
+        <h2>제목 2번 입니다.</h2>
+        <h3>제목 3번 입니다.</h3>
+        <h2>제목 4번 입니다.</h2>
+    </div>
+
 </body>
 </html>
