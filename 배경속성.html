@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* background-color: <색상값> */
+        /* background-image:  */
+        div {
+            width:100px;
+            height: 100px;
+            background-color: red;
+        }
+        .bg {
+            /* 원본이미지보다 2배 크게 설정 */
+            width: 320px;
+            height: 300px;
+            border: 1px solid black;
+            background-image: url("/------master/images/coffee.jpg");
+            background-repeat: no-repeat;
+            /* size 속성: auto(기본속성), cover, contain */
+            background-size: cover;
+            background-position:right; 
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <div class="bg"></div>
+</body>
+</html>
